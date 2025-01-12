@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeAllpaste } from "../redux/pasteSlice";
-import { formatDate } from "date-format-utils";
 import toast from "react-hot-toast";
+import { FormatDate } from "../date/dateformat";
 import { Copy, Eye, Pencil, SquareX, Share } from "lucide-react";
 const Paste = () => {
   const pastes = useSelector((state) => state.paste.pastes);
@@ -96,7 +96,7 @@ const Paste = () => {
                         />
                       </button>
                     </div>
-                    <div className="text-xs">{formatDate(paste.createdAt)}</div>
+                    <div className="text-xs">{FormatDate(paste.createdAt)}</div>
                   </section>
                 </div>
               );
