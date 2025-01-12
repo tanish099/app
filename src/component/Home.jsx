@@ -52,19 +52,21 @@ setvalue(paste.content);
     }
 
   return (
-<div>
-<div className='flex flex-row gap-7 place-content-between '>
+<div className="w-full h-full py-10 max-w-[1200px] mx-auto px-5 lg:px-0">
+<div className='flex flex-row place-content-between '>
+
+  {/* input or textarea in side the setup */}
    
    <input 
-   className='p-2 rounded-2xl mt-3 w-[66%] pl-4 border'
+   className='p-2 rounded  w-[77%] pl-4 border ml-20 '
    type="text"
    value={title}
-   placeholder='enter your title ✍️'
+   placeholder='Enter Your title ✍️'
    onChange={(e)=> setitle(e.target.value)}
    />
 
       <button 
-      onClick={createpaste} className='p-1.5 rounded-1xl mt-3 bg-blue-700	'>
+      onClick={createpaste} className='p-1.5 rounded-1xl mt-3 bg-blue-800	text-white'>
       {
           pasteId ? "Update My paste" : "create My paste"
       }
@@ -73,12 +75,18 @@ setvalue(paste.content);
 
 
 
-  <div className=' border border-[rgba(128,121,121,0.3)] mt-3 '>
-  <div className=' p-3 text-left flex flex-row items-center place-content-between '>
-   💖💞😍  
+  <div className=' border border-[rgba(128,121,121,0.3)] mt-8 ml-20 w-[84%] absolute '>
+  <div className=' p-1 text-left flex flex-row items-center place-content-between'>
+    
+    <section className='flex flex-row gap-2 p-4'>
+  <div className='w-4 h-4 bg-orange-400	rounded-2xl '></div>
+  <div className='w-4 h-4 bg-red-500	 rounded-2xl '></div>
+  <div className='w-4 h-4 bg-green-500	rounded-2xl '></div>
+  </section>
    <button onClick={() => { navigator.clipboard.writeText(value);
    toast.success("copied to clipboard",{position : "top-right"
    });
+  
     
    }}
    >
@@ -87,9 +95,9 @@ setvalue(paste.content);
    
   </div>
     <textarea 
-    className=' p-3 min-w-[500px] border border-[rgba(128,121,121,0.3)]'
+    className=' p-4 min-w-[800px] border-t border-[rgba(128,121,121,0.3)] relative w-[100%] h-80'
     value={value}
-    placeholder='enter your content'
+    placeholder='Enter Your Content here....'
     rows={20}
     onChange={(e)=> setvalue(e.target.value)}
     />

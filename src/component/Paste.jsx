@@ -5,6 +5,7 @@ import { removeAllpaste } from "../redux/pasteSlice";
 import toast from "react-hot-toast";
 import { FormatDate } from "../date/dateformat";
 import { Copy, Eye, Pencil, SquareX, Share } from "lucide-react";
+import {FaWhatsappSquare ,FaFacebook} from"react-icons/fa";
 const Paste = () => {
   const pastes = useSelector((state) => state.paste.pastes);
 
@@ -20,15 +21,15 @@ const Paste = () => {
   }
 
   return (
-    <div className="w-full h-full py-10 max-w-[1000px] mx-auto px-5 lg:px-0">
+    <div className="w-full h-full py-10 max-w-[1200] mx-auto px-5 lg:px-0">
       <input
-        className=" w-full p-2 mb-5 rounded-2xl min-w-[500px] mt-1 bg-transparent border"
+        className="  p-4  mb-5 rounded min-w-[1200px] mt-1 bg-transparent border ml-20 "
         type="search"
         placeholder="search term"
         value={searchTerm}
         onChange={(e) => setsearchterm(e.target.value)}
       />
-      <div className="border p-5 font-bold ">
+      <div className="border p-5 font-bold ml-20">
         <h1 className="text-left mb-5">All pastes </h1>
         <div className="w-full flex flex-col gap-5 ">
           {filterdData.length > 0 &&
@@ -50,16 +51,18 @@ const Paste = () => {
 
                   <section className="flex flex-col items-center  justify-center w-[300px gap-2" >
                     <div className="flex flex-row gap-2 p-2 ol">
-                      <button>
+                      <button  className="bg-black">
                         <a href={`/?pasteId=${paste?._id}`}>
                           <Pencil
-                            className="text-white 
+                            className="text-white
+                            
                             group-hover:text-blue-500"
                             size={15}
                           />
                         </a>
                       </button>
-                      <button>
+                      <button
+                      className="bg-black"> 
                         <a href={`/pastes/${paste?._id}`}>
                           <Eye
                             className="text-white group-hover:text-blue-500"
@@ -67,7 +70,7 @@ const Paste = () => {
                           />
                         </a>
                       </button>
-                      <button
+                      <button className="bg-black"
                         onClick={() => {
                           {
                             navigator.clipboard.writeText(paste?.content);
@@ -82,21 +85,33 @@ const Paste = () => {
                         />
                       </button>
 
-                      <button onClick={() => handledelete(paste?._id)}>
+                      <button onClick={() => handledelete(paste?._id)} className="bg-black">
                         <SquareX
                           className="text-white group-hover:text-blue-500"
                           size={15}
                         />
                       </button>
 
-                      <button>
+                      <button className="bg-black">
                         <Share
                           className="text-white group-hover:text-blue-500"
                           size={15}
                         />
                       </button>
                     </div>
-                    <div className="text-xs">{FormatDate(paste.createdAt)}</div>
+
+                   <div className="flex text-2xl gap-1">
+                 <a href="http://www.youtube.com"><FaFacebook /> </a>
+
+                 <a href="http://www.youtube.com"><FaWhatsappSquare/> </a>
+
+                 <a href="http://www.youtube.com"> </a>
+                 
+                 <a href="http://www.youtube.com"><FaFacebook /></a>
+                 </div>
+
+                    <div 
+                    className="text-xs">{FormatDate(paste.createdAt)}</div>
                   </section>
                 </div>
               );
