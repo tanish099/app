@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { NavbarData } from './data/navlink'
 const Navbar = () => {
   return (
-    <div className='w-full h-[45px] flex justify-center items-center p-5 bg-gray-800 gap-x-5% gap-10 w-screen'>
+    <div className= 'flex justify-center items-center p-5 bg-gray-800 gap-x-5% gap-10 w-[1280px]'>
 
 {NavbarData.map((link, idx) => (
         <NavLink

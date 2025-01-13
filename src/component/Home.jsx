@@ -52,13 +52,13 @@ setvalue(paste.content);
     }
 
   return (
-<div className="w-full h-full py-10 max-w-[1200px] mx-auto px-5 lg:px-0">
-<div className='flex flex-row place-content-between '>
+<div className="w-full py-10 mx-auto px-5 lg:px-0 flex flex-col items-center">
+<div className='flex flex-row place-content-between gap-9'>
 
   {/* input or textarea in side the setup */}
    
    <input 
-   className='p-2 rounded  w-[77%] pl-4 border ml-20 '
+   className='p-3 rounded pl-4 border  w-[820px]'
    type="text"
    value={title}
    placeholder='Enter Your title ✍️'
@@ -66,7 +66,7 @@ setvalue(paste.content);
    />
 
       <button 
-      onClick={createpaste} className='p-1.5 rounded-1xl mt-3 bg-blue-800	text-white'>
+      onClick={createpaste} className='p-4 rounded-1xl  bg-blue-800	text-white'>
       {
           pasteId ? "Update My paste" : "create My paste"
       }
@@ -75,8 +75,8 @@ setvalue(paste.content);
 
 
 
-  <div className=' border border-[rgba(128,121,121,0.3)] mt-8 ml-20 w-[84%] absolute '>
-  <div className=' p-1 text-left flex flex-row items-center place-content-between'>
+  <div className=' border border-[rgba(128,121,121,0.3)] mt-8   justify-center'>
+  <div className=' p-1 text-left flex flex-row items-center place-content-between '>
     
     <section className='flex flex-row gap-2 p-4'>
   <div className='w-4 h-4 bg-orange-400	rounded-2xl '></div>
@@ -95,10 +95,10 @@ setvalue(paste.content);
    
   </div>
     <textarea 
-    className=' p-4 min-w-[800px] border-t border-[rgba(128,121,121,0.3)] relative w-[100%] h-80'
+    className=' p-4 border-t border-[rgba(128,121,121,0.3)]  w-[1000px]'
     value={value}
-    placeholder='Enter Your Content here....'
-    rows={20}
+    placeholder= 'Enter Your Content here....'
+    rows={12}
     onChange={(e)=> setvalue(e.target.value)}
     />
   </div>

@@ -21,36 +21,36 @@ const Paste = () => {
   }
 
   return (
-    <div className="w-full h-full py-10 max-w-[1200] mx-auto px-5 lg:px-0">
+    <div className="w-full h-full py-10 max-w-[1280] mx-auto px-5 lg:px-0 flex flex-col justify-center items-center">
       <input
-        className="  p-4  mb-5 rounded min-w-[1200px] mt-1 bg-transparent border ml-20 "
+        className="  p-4 mb-4 rounded min-w-[900px] bg-transparent border "
         type="search"
         placeholder="search term"
         value={searchTerm}
         onChange={(e) => setsearchterm(e.target.value)}
       />
-      <div className="border p-5 font-bold ml-20">
-        <h1 className="text-left mb-5">All pastes </h1>
-        <div className="w-full flex flex-col gap-5 ">
+      <div className="border p-5 font-bold w-[900px] flex flex-col items-center ">
+        <h1 className="text-left mb-5 ">All pastes </h1>
+        <div className=" flex flex-col gap-5 w-[800px] items-center">
           {filterdData.length > 0 &&
             filterdData.map((paste) => {
               return (
                 <div
-                  className="border flex flex-row border-[(128,121,121,0.3)]"
+                  className="border flex flex-row border-[(128,121,121,0.3)] w-full  justify-center "
                   key={paste?._id}
                 >
-                  <div className=" w-[90%] flex flex-col space-y-3 text-left p-3 ">
-                    <div className="text-4xl font-semibold">{paste.title}</div>
+                  <div className=" w-[100%] flex flex-col space-y-5 text-left p-4  ">
+                    <div className="text-6xl font-semibold">{paste.title}</div>
                     <div
-                      className="
-               text-sm font-normal line-clamp-3 max-w-[80%] text-[#707070]"
+                      className=" text-2xl
+                font-normal line-clamp-3 max-w-[80%] text-[#707070]"
                     >
                       {paste.content}
                     </div>
                   </div>
 
-                  <section className="flex flex-col items-center  justify-center w-[300px gap-2" >
-                    <div className="flex flex-row gap-2 p-2 ol">
+                  <section className="flex flex-col items-center  justify-center w-[300px gap-1 p-3" >
+                    <div className="flex flex-row gap-2 p-2">
                       <button  className="bg-black">
                         <a href={`/?pasteId=${paste?._id}`}>
                           <Pencil
@@ -81,37 +81,37 @@ const Paste = () => {
                       >
                         <Copy
                           className="text-white group-hover:text-blue-500"
-                          size={15}
+                          size={10}
                         />
                       </button>
 
                       <button onClick={() => handledelete(paste?._id)} className="bg-black">
                         <SquareX
                           className="text-white group-hover:text-blue-500"
-                          size={15}
+                          size={10}
                         />
                       </button>
 
                       <button className="bg-black">
                         <Share
                           className="text-white group-hover:text-blue-500"
-                          size={15}
+                          size={10}
                         />
                       </button>
                     </div>
 
-                   <div className="flex text-2xl gap-1">
-                 <a href="http://www.youtube.com"><FaFacebook /> </a>
+                   <div className="flex  gap-4">
+                 <a href="http://www.youtube.com"><FaFacebook size={40}/> </a>
 
-                 <a href="http://www.youtube.com"><FaWhatsappSquare/> </a>
+                 <a href="http://www.youtube.com"><FaWhatsappSquare 
+                 size={40}/> </a>
 
-                 <a href="http://www.youtube.com"> </a>
                  
-                 <a href="http://www.youtube.com"><FaFacebook /></a>
+                 <a href="http://www.youtube.com"><FaFacebook size={40}/></a>
                  </div>
 
                     <div 
-                    className="text-xs">{FormatDate(paste.createdAt)}</div>
+                    className="text-xl mb-3 ">{FormatDate(paste.createdAt)}</div>
                   </section>
                 </div>
               );
